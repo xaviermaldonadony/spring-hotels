@@ -7,6 +7,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -36,9 +37,16 @@ public class Hotel {
     private LocalDateTime updatedAt;
 
     @Embedded
-    private HotelContactInfo hotelContactInfo;
+    private HotelContactInfo contactInfo;
 
     @Column(nullable = false)
     private Boolean active;
+
+//    @Column(nullable = false)
+    @ManyToOne
+    private User owner;
+
+    @OneToMany(mappedBy = "hotel")
+    private List<Room> rooms;
 
 }
