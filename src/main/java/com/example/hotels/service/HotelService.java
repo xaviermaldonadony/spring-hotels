@@ -2,6 +2,7 @@ package com.example.hotels.service;
 
 
 import com.example.hotels.dto.HotelDto;
+import com.example.hotels.dto.HotelInfoDto;
 
 public interface HotelService {
 
@@ -14,4 +15,6 @@ public interface HotelService {
     void deleteHotelById(Long id);
 
     void activateHotel(Long hotelId);
+
+    HotelInfoDto getHotelInfoById(Long hotelId);
 }

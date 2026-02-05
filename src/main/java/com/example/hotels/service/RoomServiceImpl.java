@@ -74,7 +74,7 @@ public class RoomServiceImpl implements RoomService{
                 .orElseThrow(() -> new ResourceNotFoundException("Room not found with ID: " + roomId));
 
 //        TODO: thowing erro sa far. seems like a threading issue.
-        inventoryService.deleteFutureInventories(room);
+        inventoryService.deleteAllInventories(room);
         roomRepository.deleteById(roomId);
     }
 }
